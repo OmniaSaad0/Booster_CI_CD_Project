@@ -17,8 +17,8 @@ jobs:
 
       # Build the Docker image
       - name: Build the Docker image
-        run: docker build . --tag ${{secrets.DOCKER_USERNAME}}/test-django-app:$(date +%s)
+        run: docker build . --tag ${{secrets.DOCKER_USERNAME}}/test-django-app
 
       # Push the Docker image to Docker Hub
       - name: Push the Docker image
-        run: docker push omniasaad/test-django-app:$(date +%s)
+        run: docker push ${{secrets.DOCKER_USERNAME}}/test-django-app
